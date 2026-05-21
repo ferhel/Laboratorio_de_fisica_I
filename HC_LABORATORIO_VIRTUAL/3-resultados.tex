@@ -1,0 +1,327 @@
+\chapter{Resultados}
+\thispagestyle{fancy}
+\label{ch:resultados}
+
+% ─────────────────────────────────────────
+\section{Datos en Bruto}
+% ─────────────────────────────────────────
+
+\subsection*{Ejercicio A — Lanzamiento vertical}
+
+En el Cuadro~\ref{tab:alturas} se presentan las seis mediciones de altura
+alcanzada por la pelota. Todas fueron realizadas con un instrumento de
+apreciación $\Delta x = 0{,}01$~m.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{c c}
+    \toprule
+    Lanzamiento & Altura medida (m) \\
+    \midrule
+    1 & 19{,}00 \\
+    2 & 20{,}20 \\
+    3 & 19{,}50 \\
+    4 & 20{,}00 \\
+    5 & 19{,}00 \\
+    6 & 18{,}30 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Alturas alcanzadas por la pelota en seis lanzamientos.}
+  \label{tab:alturas}
+\end{table}
+
+\subsection*{Ejercicio B — Cinemática en una dimensión}
+
+En el Cuadro~\ref{tab:datos_brutos} se presentan los parámetros cinemáticos
+del sistema de tres tramos, junto con las incertidumbres instrumentales.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l c c c}
+    \toprule
+    Magnitud & Tramo I (MRUA) & Tramo II (MRU) & Tramo III (MRUR) \\
+    \midrule
+    Tipo de movimiento      & MRUA    & MRU     & MRUR   \\
+    Velocidad inicial       & 0~m/s   & $V_1$   & $V_1$  \\
+    Velocidad final         & $V_1$   & $V_1$   & 0~m/s  \\
+    Tiempo (s)              & 6{,}00  & 50{,}00 & $T_3$  \\
+    Aceleración (m/s$^2$)   & 4{,}00  & 0       & ---    \\
+    Distancia (m)           & $X_1$   & $X_2$   & 48{,}00 \\
+    \midrule
+    $\Delta t$ (s)          & \multicolumn{3}{c}{0{,}01} \\
+    $\Delta a$ (m/s$^2$)    & \multicolumn{3}{c}{0{,}02} \\
+    $\Delta x$ (m)          & \multicolumn{3}{c}{0{,}01} \\
+    \bottomrule
+  \end{tabular}
+  \caption{Parámetros cinemáticos del sistema y apreciaciones instrumentales.}
+  \label{tab:datos_brutos}
+\end{table}
+
+% ─────────────────────────────────────────
+\section{Cálculos y Discusión}
+% ─────────────────────────────────────────
+
+% ══════════════════════════════════════════
+\subsection*{Ejercicio A — Lanzamiento vertical}
+% ══════════════════════════════════════════
+
+\subsubsection*{a) Altura promedio y desviación estándar}
+
+La altura promedio se calcula como:
+\[
+\bar{h} = \frac{1}{n}\sum_{i=1}^{n} h_i
+        = \frac{19{,}00 + 20{,}20 + 19{,}50 + 20{,}00 + 19{,}00 + 18{,}30}{6}
+        = \frac{116{,}00}{6} = 19{,}33 \text{ m}
+\]
+
+La desviación estándar muestral es:
+\[
+s = \sqrt{\frac{\sum_{i=1}^{n}(h_i - \bar{h})^2}{n-1}}
+\]
+
+En el Cuadro~\ref{tab:desviacion} se detallan los residuos al cuadrado.
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{c c c c}
+    \toprule
+    $i$ & $h_i$ (m) & $h_i - \bar{h}$ (m) & $(h_i - \bar{h})^2$ (m$^2$) \\
+    \midrule
+    1 & 19{,}00 & $-0{,}33$ & 0{,}1089 \\
+    2 & 20{,}20 & $+0{,}87$ & 0{,}7569 \\
+    3 & 19{,}50 & $+0{,}17$ & 0{,}0289 \\
+    4 & 20{,}00 & $+0{,}67$ & 0{,}4489 \\
+    5 & 19{,}00 & $-0{,}33$ & 0{,}1089 \\
+    6 & 18{,}30 & $-1{,}03$ & 1{,}0609 \\
+    \midrule
+    & & $\sum$ & 2{,}5134 \\
+    \bottomrule
+  \end{tabular}
+  \caption{Residuos y residuos al cuadrado para el cálculo de la desviación estándar.}
+  \label{tab:desviacion}
+\end{table}
+
+\[
+s = \sqrt{\frac{2{,}5134}{5}} = \sqrt{0{,}5027} = 0{,}71 \text{ m}
+\]
+
+\[
+\boxed{\bar{h} = 19{,}33 \text{ m}, \qquad s = 0{,}71 \text{ m}}
+\]
+
+\subsubsection*{b) Incertidumbre absoluta de la altura}
+
+La incertidumbre absoluta mezcla la incertidumbre aleatoria
+(error estándar de la media) y la incertidumbre instrumental:
+
+\[
+\Delta h_{aleatorio} = \frac{s}{\sqrt{n}} = \frac{0{,}71}{\sqrt{6}} = 0{,}29 \text{ m}
+\]
+
+Como $\Delta h_{aleatorio} > \Delta x_{inst} = 0{,}01$~m, la incertidumbre
+dominante es la aleatoria, por lo que:
+
+\[
+\boxed{\Delta h = 0{,}29 \text{ m}}
+\]
+
+\[
+\boxed{h = (19{,}33 \pm 0{,}29) \text{ m}}
+\]
+
+\subsubsection*{c) Velocidad inicial promedio}
+
+La velocidad inicial se obtiene utilizando el principio 
+de conservación de la energía mecánica, 
+asumiendo que la energía cinética inicial se convierte completamente en 
+energía potencial al alcanzar la altura máxima, lo que se expresa como:
+\[
+V_0 = \sqrt{2g\bar{h}}
+\]
+
+\textbf{Propagación de incertidumbre por derivadas parciales:}
+
+Dado que $V_0$ depende únicamente de $\bar{h}$ (con $g$ exacto):
+\[
+\Delta V_0 = \left|\frac{\partial V_0}{\partial h}\right| \Delta\bar{h}
+\]
+
+La derivada parcial es:
+\[
+\frac{\partial V_0}{\partial h} = \frac{\partial}{\partial h}\left(2gh\right)^{1/2}
+= \frac{1}{2}\cdot\frac{2g}{\sqrt{2gh}} = \frac{g}{\sqrt{2gh}} = \frac{g}{V_0}
+\]
+
+Sustituyendo:
+\[
+\Delta V_0 = \frac{g}{V_0}\,\Delta\bar{h}
+\]
+
+\textbf{Cálculo numérico:}
+\[
+V_0 = \sqrt{2(9{,}78)(19{,}33)} = \sqrt{378{,}29} = 19{,}44 \text{ m/s}
+\]
+\[
+\Delta V_0 = \frac{9{,}78}{19{,}44}\,(0{,}29) = 0{,}503 \times 0{,}29 = 0{,}15 \text{ m/s}
+\]
+
+\[
+\boxed{V_0 = (19{,}44 \pm 0{,}15) \text{ m/s}}
+\]
+
+% ══════════════════════════════════════════
+\subsection*{Ejercicio B — Cinemática en una dimensión}
+% ══════════════════════════════════════════
+
+En los siguientes cálculos se aplica el método de propagación de incertidumbre 
+por derivadas parciales, considerando las variables con incertidumbre 
+en cada tramo del movimiento. Esto quiere decir que para una 
+función $f(x_1, x_2, \ldots, x_n)$, la incertidumbre
+propagada es:
+\[
+\Delta f = \sum_{i=1}^{n} \left|\frac{\partial f}{\partial x_i}\right| \Delta x_i
+\]
+
+\subsubsection*{Tramo I — MRUA}
+
+Aplicando $X_f = X_0 + V_0 t + \frac{1}{2}at^2$ con $V_0 = 0$ y $X_0 = 0$:
+\[
+X_1 = \tfrac{1}{2}(4{,}00)(6{,}00)^2 = 72{,}0 \text{ m}
+\]
+
+Las derivadas parciales de $X_1$ con respecto a $a$ y $t$ son:
+\[
+\frac{\partial X_1}{\partial a} = \frac{t^2}{2}, \qquad
+\frac{\partial X_1}{\partial t} = at
+\]
+
+Por lo que la incertidumbre propagada es:
+\[
+\Delta X_1 = \frac{t^2}{2}\,\Delta a + at\,\Delta t
+           = \frac{(6{,}00)^2}{2}(0{,}02) + (4{,}00)(6{,}00)(0{,}01)
+           = 0{,}36 + 0{,}24 = 0{,}60 \text{ m}
+\]
+\[
+\boxed{X_1 = (72{,}0 \pm 0{,}60) \text{ m}}
+\]
+
+La velocidad al final del Tramo~I y su incertidumbre son:
+\[
+V_1 = at = (4{,}00)(6{,}00) = 24{,}0 \text{ m/s}
+\]
+\[
+\frac{\partial V_1}{\partial a} = t, \qquad \frac{\partial V_1}{\partial t} = a
+\implies
+\Delta V_1 = t\,\Delta a + a\,\Delta t = (6{,}00)(0{,}02) + (4{,}00)(0{,}01) = 0{,}16 \text{ m/s}
+\]
+
+\subsubsection*{Tramo II — MRU}
+
+Con $X_f = V_1 t$:
+\[
+X_2 = (24{,}0)(50{,}00) = 1200{,}0 \text{ m}
+\]
+
+Las derivadas parciales son:
+\[
+\frac{\partial X_2}{\partial V_1} = t, \qquad
+\frac{\partial X_2}{\partial t} = V_1
+\]
+
+\[
+\Delta X_2 = t\,\Delta V_1 + V_1\,\Delta t
+           = (50{,}00)(0{,}16) + (24{,}0)(0{,}01)
+           = 8{,}00 + 0{,}24 = 8{,}24 \text{ m}
+\]
+\[
+\boxed{X_2 = (1200{,}0 \pm 8{,}24) \text{ m}}
+\]
+
+\subsubsection*{Tramo III — MRUR}
+
+El autobús frena desde $V_1 = 24{,}0$~m/s hasta el reposo en
+$x = 48{,}00$~m. Usando la velocidad promedio $\bar{V} = V_1/2 = 12{,}0$~m/s:
+\[
+T_3 = \frac{x}{\bar{V}} = \frac{48{,}00}{12{,}0} = 4{,}00 \text{ s}
+\]
+
+Las derivadas parciales de $T_3 = x/\bar{V}$ son:
+\[
+\frac{\partial T_3}{\partial x} = \frac{1}{\bar{V}}, \qquad
+\frac{\partial T_3}{\partial \bar{V}} = -\frac{x}{\bar{V}^2}
+\implies
+\Delta T_3 = \frac{\Delta x}{\bar{V}} + \frac{x\,\Delta\bar{V}}{\bar{V}^2}
+\]
+
+Con $\Delta\bar{V} = \Delta V_1/2 = 0{,}08$~m/s:
+\[
+\Delta T_3 = \frac{0{,}01}{12{,}0} + \frac{(48{,}00)(0{,}08)}{(12{,}0)^2}
+           = 0{,}0008 + 0{,}0267 \approx 0{,}03 \text{ s}
+\]
+\[
+\boxed{T_3 = (4{,}00 \pm 0{,}03) \text{ s}}
+\]
+
+\subsubsection*{Totales}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{l c c c}
+    \toprule
+    Magnitud & Valor & Incertidumbre & Incertidumbre relativa \\
+    \midrule
+    Distancia total & 1320{,}0~m & $\pm\,8{,}85$~m & 0{,}67\% \\
+    Tiempo total    & 60{,}00~s  & $\pm\,0{,}03$~s & 0{,}05\% \\
+    \bottomrule
+  \end{tabular}
+  \caption{Resultados finales con incertidumbres propagadas.}
+  \label{tab:resultados}
+\end{table}
+
+
+\begin{figure}[htbp]
+  \centering
+\includegraphics[width=0.85\textwidth]{imagenes/grafica_scatter.png}
+  \caption{Diagrama de dispersión de posición vs.\ tiempo para los tres tramos
+           de movimiento. Los colores distinguen el Tramo~I (MRUA, azul),
+           Tramo~II (MRU, verde) y Tramo~III (MRUR, rojo).}
+  \label{fig:scatter}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{imagenes/grafica_vba_equiv.png}
+  \caption{Posición vs.\ tiempo con ajuste polinomial por mínimos cuadrados
+           y coeficiente $R^2$ para cada tramo. Las líneas punteadas representan
+           el modelo ajustado, equivalente a la línea de tendencia generada
+           por las macros VBA de la plantilla proporcionada.}
+  \label{fig:tendencia}
+\end{figure}
+
+
+\subsubsection*{Discusión}
+
+Los resultados de ambos ejercicios mantienen coherencia con el modelo
+teórico de la cinemática. Esto se evidencia en la dispersión de las 
+alturas medidas en el Ejercicio~A, donde la desviación estándar de $s = 0{,}71$~m 
+refleja la variabilidad inherente al lanzamiento humano. 
+La incertidumbre aleatoria, domina sobre la incertidumbre 
+instrumental de $0{,}01$~m, 
+lo que indica que el factor limitante para la precisión de las 
+mediciones no es el instrumento sino la reproducibilidad del lanzamiento.
+
+En el ejercicio~B, se muestran incertidumbres relativas inferiores al $1\%$ 
+en todas las magnitudes, por lo tanto, los instrumentos utilizados son 
+consistentes con la escala del experimento. Se destaca la contribución 
+significativa del error en $V_1$ durante el Tramo~II, donde la 
+incertidumbre de $0{,}16$~m/s se amplifica por el intervalo de 50~s de velocidad constante,
+generando una incertidumbre de $8{,}24$~m en la distancia, en consecuencia, 
+representa el 93\% de la incertidumbre total en la distancia. A pesar de esto, 
+la incertidumbre relativa en la distancia total se mantiene baja (0{,}67\%), 
+lo que indica que el modelo calculado responde adecuadamente a las condiciones 
+del experimento. En la Figura~\ref{fig:scatter} se observa una clara 
+tendencia de los datos a seguir las trayectorias esperadas 
+para cada tipo de movimiento, y el ajuste polinomial en la 
+Figura~\ref{fig:tendencia} muestra coeficientes $R^2$ cercanos a 1, 
+lo que confirma la buena concordancia entre el modelo teórico y los datos experimentales.

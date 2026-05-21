@@ -1,0 +1,179 @@
+
+\textbf{1.} A partir de la ecuación teórica para el sistema masa-resorte estático:
+\begin{equation}
+    y = \frac{g}{k}\,m + y_{0}
+\end{equation}
+
+\textbf{Responde:} ¿Qué representa la pendiente en esta ecuación? ¿Y la ordenada en el origen?
+Si se grafica posición y (m) vs masa m (kg), ¿cómo se obtiene la constante elástica
+k a partir de la pendiente?
+Supón que en un experimento estático se obtiene una pendiente a = 0,245 m/kg. Calcula
+k usando $g = 9,8 m/s^ 2$
+
+
+\textbf{Respuesta:}
+\textbf{¿Qué representa la pendiente en esta ecuación?}
+La pendiente corresponde a $\frac{g}{k}$ y representa cómo cambia la posición del
+resorte por cada unidad de masa correspondiente. En consecuencia, se puede predecir
+el comportamiento del sistema. 
+
+\textbf{¿Y la ordenada en el origen?}
+La ordenada en el origen, correspondiente originalmente a b en la ecuación de la recta, 
+acá se representa por $y_0$, esto se refiere a la posición inicial del resorte cuando
+no hay ninguna masa colgado. 
+
+\textbf{Si se grafica posición y (m) vs masa m (kg), ¿cómo se obtiene la constante 
+elástica k a partir de la pendiente?}
+
+Al graficar la masa $m$ en el eje x y la posición $y$ en el eje y, la pendiente
+obtenida será $a= \frac{g}{k}$. Al despejar, se obtiene: 
+\begin{equation}
+ k=\frac{g}{a}  
+\end{equation}
+ 
+\textbf{Supón que en un experimento estático se obtiene una pendiente $a = 0,245 m/kg$ 
+Calcula $k$ usando $g = 9,8 m/s^ 2$}
+
+
+\begin{pycode}
+g= 9.8
+a = 0.245
+k = g / a
+
+\end{pycode}
+
+Para calcular k se sustituen los valores en la ecuación 2, donde se obtiene que 
+la constante elástica es $k = \py{round(k, 3)}$ N/m.
+
+
+
+\textbf{2.} Para el sistema dinámico, el período de oscilación está dado por: 
+
+\begin{equation}
+    T = 2 \pi \sqrt{\frac{m+m_e}{k}}
+\end{equation}
+
+ · Despeja $T^2$ en función de $m$. Escribe la ecuación lineal resultante (forma $y=ax+b$),
+identificando claramente la variable dependiente e independiente, la pendiente y la
+ordena en el origen.
+
+
+\textbf{Respuesta:}
+Elevando al cuadrado y despejando se obtiene la forma lineal
+\begin{equation}
+    T^2 = \frac{4\pi^2}{k}\,m + \frac{4\pi^2 m_e}{k}
+\end{equation}
+
+Aquí la variable dependiente es $T^2$, la independiente es $m$, la pendiente es
+$a=\dfrac{4\pi^2}{k}$ y la ordenada en el origen es $b=\dfrac{4\pi^2 m_e}{k}$.
+
+
+ · Si al graficar $T^2$ $vs$ $m$ se obtiene una pendiente $a = 4,0\,\mathrm{s^2/kg}$, 
+ ¿cuál es el valor de $k$?
+
+ \begin{pycode}
+
+import math
+a = 4.0
+k_dos = 4* math.pi**2 / a
+
+ \end{pycode}
+
+
+\textbf{Respuesta:}
+
+Si $a=\dfrac{4\pi^2}{k}$ entonces; $k=\dfrac{4\pi^2}{a} =
+\py{round(k_dos, 2)} N/m$
+ 
+ ·Si además la ordenada en el origen es $b = 0,12 s^ 2$ , ¿cuál es el valor de la masa equivalente
+$m_e$ del resorte?
+
+Como ya se tiene a, $b = a \cdot m_e$, despejando: $m_e= \frac{b}{a}$
+$m_e = 0.03$ kg
+
+
+ \textbf{3.} Responde brevemente:
+ · ¿Qué significa que el parámetro $R^2$ sea igual a 0.998 en un ajuste lineal?
+
+
+\textbf{Respuesta:} Significa que el $99.8\%$ de la variación de la 
+variable dependiente se explica con una relación lineal con la 
+variable independiente, por lo que el modelo lineal es adecuado. Sin
+embargo, se debe analizar junto a la representación gráfica de residuos
+para prevenir sesgos en el modelo. A su vez, la variación, se refiere
+ a qué tanto difieren los valores de la variable dependiente 
+respecto a su promedio; si las variables cambian de forma 
+linealmente predecible, el valor de $R^2$ se acerca a 1. 
+
+ · ¿Qué tipo de función (lineal, potencial, exponencial)
+usarías para graficar $T^2$ vs m según
+la teoría?
+
+\textbf{Respuesta:}
+De acuerdo a los despejes anteriores, la ecuación para 
+esta variable toma la forma de una ecuación de la recta, 
+por lo tanto, una función lineal es la más apropiada para 
+predecir tendencias con una pendiente de $a = \frac{4\pi^2}{k}$
+
+ · En la práctica anterior se usó papel milimetrado y ajuste visual. ¿Qué ventaja ofrece el
+método de mínimos cuadrados con hoja de cálculo?
+
+\textbf{Respuesta:} Este método busca minimizar la suma de los errores 
+cuadrados de todos los puntos simultáneamente repecto a la recta, lo que 
+obtiene la mejor pendiente e intercepto. Además, elimina el sesgo visual 
+y brinda la herramienta de $R^ 2$ para cuantificar la calidad del ajuste.
+
+\textbf{4.} La práctica indica que la masa equivalente del resorte me es igual a un tercio de la
+masa real del resorte.
+Supón que el resorte utilizado tiene una masa Mresorte = 60 g. Calcula me . Luego, si
+en la experiencia dinámica se usó una masa colgante m = 0,200 kg, ¿cuál es la masa
+total oscilante que debe usarse en la fórmula teórica del período?
+
+\textbf{Respuesta:} La masa total oscilante es la suma de la masa colgante 
+y la masa equivalente; si la masa resorte es de 60g,
+ la masa equivalente es de 20g.
+ Entonces, para obtener 
+la masa total oscilante, se tiene que 
+  $m_t = m + m_e = 0.200 + 0.020 = 0.220 \, \text{kg}$
+
+ \textbf{5.} Diseña las tablas de datos que utilizarás en el laboratorio para:
+Régimen estático: columnas para masa (g y kg), posición (cm y m).
+ Incluye una fila
+para $y_0$ sin masa.
+Régimen dinámico: columnas para masa (g → kg), 
+tiempo de 20 oscilaciones (s),
+período T (s), $T ^2$ ($s^2$).
+
+\begin{table}[h]
+\centering
+\caption{Régimen Estático}
+\begin{tabular}{ccccc}
+\toprule
+$m$ (g) & $m$ (kg) & Posición (cm) & Posición (m) & Elongación $x$ (m) \\
+\midrule
+0 (sin masa) & 0 & & & 0 \\
+& & & & \\
+& & & & \\
+& & & & \\
+& & & & \\
+\bottomrule
+\end{tabular}
+\label{tab:estatico}
+\end{table}
+
+\begin{table}[h]
+\centering
+\caption{Régimen Dinámico}
+\begin{tabular}{ccccc}
+\toprule
+$m$ (g) & $m$ (kg) & $t_{20}$ (s) & $T$ (s) & $T^2$ ($\text{s}^2$) \\
+\midrule
+& & & & \\
+& & & & \\
+& & & & \\
+& & & & \\
+& & & & \\
+\bottomrule
+\end{tabular}
+\label{tab:dinamico}
+\end{table}
