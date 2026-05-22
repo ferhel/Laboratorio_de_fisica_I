@@ -1,0 +1,131 @@
+\documentclass[12pt,letter]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{lastpage}
+\usepackage{booktabs}   
+\usepackage{tabularx}   
+\usepackage{caption}
+\usepackage{url}
+\usepackage{doi}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Datos Personales
+\newcommand{\studentname}{Hellen Castillo} % Nombre Estudiante
+\newcommand{\studentid}{V-31.101.993} % Cedula Estudiante
+\newcommand{\studentinitials}{HC} % Iniciales del Estudiante
+% Datos del Curso
+\newcommand{\professor}{George Embaid} % Nombre Profesor
+\newcommand{\profinitials}{GE} % Iniciales Profesor
+\newcommand{\semester}{1-2026} % Semestre, ejemplo 2-2026
+\newcommand{\coursename}{Laboratorio de Física I} % Nombre del Curso
+% Datos de la Practica
+\newcommand{\labtitle}{Densidad de Sólidos} % Titulo de la Practica
+\newcommand{\practicenumber}{2} % Numero de la Practica
+\newcommand{\practicedate}{2026-05-07} % Fecha de la Practica en formato YYYY-MM-DD
+\newcommand{\reportdate}{2026-05-13} % Fecha de Elaboración del Informe en formato YYYY-MM-DD
+\newcommand{\reportdatecode}{20260513} % Codigo del Informe, es YYYYMMDD
+
+% Datos de la Universidad (No Tocar)
+\newcommand{\universityname}{Universidad Central de Venezuela}  % Nombre de la Universidad
+\newcommand{\facultyname}{Facultad de Ciencias} % Facultad
+\newcommand{\physicsschool}{Escuela de Física} % Escuela
+
+% Datos del Documento (No Tocar)
+\geometry{left=2.5cm, right=2.5cm, top=3cm, bottom=3cm}
+\onehalfspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancyhead[L]{\coursename}
+\fancyhead[C]{\labtitle}
+\fancyhead[R]{\studentname}
+
+\fancyfoot[L]{LFI/\practicenumber/\studentinitials/\reportdatecode}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage\  /\ \pageref*{LastPage}}
+
+% Se asegura de que los títulos de los capítulos aparezcan en el encabezado solo si es necesario (opcional)
+% Mantén la numeración de las secciones, pero elimina el número de capítulo únicamente del encabezado
+\titleformat{\chapter}[hang]
+  {\normalfont\LARGE\bfseries\centering}
+  {}   % sin numero
+  {0pt}
+  {\LARGE}
+
+% --------------------- Formato Primera Página (No Tocar) ---------------------
+\newcommand{\makefirstpage}{
+\thispagestyle{empty}
+\begin{center}
+    \noindent
+    \begin{minipage}[c]{0.15\textwidth}
+        \includegraphics[height=2.5cm, keepaspectratio]{style/UCV.png}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.7\textwidth}
+        \centering
+        {\Large \textbf{\universityname}}\\[2pt]
+        {\large \facultyname}\\
+        {\normalsize \physicsschool}
+    \end{minipage}\hfill
+    \begin{minipage}[c]{0.15\textwidth}
+        \raggedleft
+        \includegraphics[height=2.5cm, keepaspectratio]{style/Ciencias.png}
+    \end{minipage}
+
+    \vspace{0.5cm}
+    \rule{\textwidth}{0.4pt}
+
+    \vspace{0.5cm}
+\begin{tabular}{c}
+    \coursename \\[4pt]
+    \begin{tabular}{r l @{\qquad} r l @{\qquad} r l}
+        & & Profesor:& \professor   & & \\[4pt]
+        Semestre:  & \semester & Estudiante:& \studentname & C.I: & \studentid
+    \end{tabular}
+\end{tabular}
+
+    \vspace{0.5cm}
+    \rule{\textwidth}{0.4pt}
+
+    \vspace{2cm}
+    {\LARGE \textbf{Práctica \practicenumber: \labtitle}}\\[0.8cm]
+    {\large Fecha de la Práctica: \practicedate}\\[0.2cm]
+    {\large Fecha del Informe: \reportdate}
+    \vspace{1cm}
+    
+   %--- Resumen de resumen.tex ---
+   {\large \textbf{Resumen}}\\[0.3cm]
+    {\small \itshape \input{0-resumen}}   % Ajuste Estilo y tamaño si necesario
+\end{center}
+\newpage
+}
+
+\begin{document}
+
+\makefirstpage
+\tableofcontents
+\newpage
+
+% Capítulos a incluir
+% Comentar con % si no van a utilizar uno
+
+\include{1-introduccion}
+\include{2-montaje_experimental}
+\include{3-resultados}
+\include{4-conclusiones}
+\include{5-bibliografia}
+%\include{6-anexos}
+
+\end{document}
